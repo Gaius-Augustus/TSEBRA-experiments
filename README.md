@@ -1,8 +1,8 @@
 # TSEBRA-Experiments
 
-This repository contains all data and scripts used for the experiments of the ToDo: [TSEBRA Paper].
+This repository contains all data and scripts used for the experiments of the paper TSEBRA: Transcript Selector for BRAKER.
 
-Both experiments require that [TSEBRA](https://github.com/LarsGab/TSEBRA) has been downloaded and that its ```bin``` folder is added to ```$PATH```, e.g.:
+Both experiments require that [TSEBRA](https://github.com/Gaius-Augustus/TSEBRA) has been downloaded and that its ```bin``` folder is added to ```$PATH```, e.g.:
 ```console
 git clone https://github.com/LarsGab/TSEBRA
 export PATH="$(pwd)/TSEBRA/bin:$PATH"
@@ -91,7 +91,7 @@ The second experiment was carried out with all model species listed in ```model_
 
 For this experiment you need to
 * perform [Experiment 1](#1-exp),
-* install [EVidenceModeler](https://github.com/EVidenceModeler/EVidenceModeler).
+* install [EVidenceModeler](https://github.com/EVidenceModeler/EVidenceModeler/tree/68e724ea25badcd74a1d4631c712605a4efa78ef) (commit 68e724e).
 
 If you haven't done it for the first Experiment:
 * prepare genome and annotation as described in [EukSpecies-BRAKER2](https://github.com/gatech-genemark/EukSpecies-BRAKER2)
@@ -162,7 +162,7 @@ Partiton and prepare all data for EVM, TSEBRA and their evaluation:
 partition.py --species_dir $species_dir --test_level $level --evm_path $evm_path --out ${species_dir}/EVM/${level}/
 ```
 
-If you want to reconstruct the results from ToDo: [PAPER] then use the provided partition test set:
+If you want to reconstruct the results from the TSEBRA paper then use the provided partition test set:
 ```console
 sed -i "s,pathtoyoutpartitions,$species_dir/EVM/$level/partitions/,g" ${species_dir}/EVM/${level}/partitions/part_test.lst
 sed -i "s,pathtoyoutpartitions,$species_dir/EVM/$level/partitions/,g" ${species_dir}/EVM/${level}/partitions/part_train.lst
