@@ -4,7 +4,7 @@ This repository contains all data and scripts used for the experiments of the pa
 
 Both experiments require that [TSEBRA](https://github.com/Gaius-Augustus/TSEBRA) has been downloaded and that its ```bin``` folder is added to ```$PATH```, for example with:
 ```console
-git clone https://github.com/LarsGab/TSEBRA
+git clone https://github.com/Gaius-Augustus/TSEBRA
 export PATH="$(pwd)/TSEBRA/bin:$PATH"
 ```
 
@@ -78,7 +78,7 @@ The TSEBRA and evaluation results are located at ```$species_dir/tsebra_default/
 
 ## Experiment 2 (Comparison to EVidenceModeler<sup name="a3">[3](#ref3)</sup>)
 
-The second experiment was carried out with all model species listed in ```model_species.tab``` and the following manual only works for these species. In this experiment we compared TSEBRA with EVidenceModeler (EVM) [cite].
+The second experiment was carried out with all model species listed in ```model_species.tab``` and the following manual only works for these species. In this experiment we compared TSEBRA with EVidenceModeler (EVM).
 
 ### Before you start
 
