@@ -1,0 +1,9 @@
+Arabidopsis_thaliana;species_excluded	15.0	10.0	0.75	1.0	0.0	0.0	20.0	0.0
+Arabidopsis_thaliana;family_excluded	10.0	0.5	0.75	1.0	0.0	0.0	10.0	0.0
+Arabidopsis_thaliana;order_excluded	5.5	10.0	0.5	1.0	0.0	0.5	30.0	2.5
+Caenorhabditis_elegans;species_excluded	5.5	15.0	0.0	0.0	0.0	1.0	10.0	2.5
+Caenorhabditis_elegans;family_excluded	0.5	10.0	0.0	0.0	0.0	0.5	20.0	10.0
+Caenorhabditis_elegans;order_excluded	0.5	10.0	0.0	0.0	0.0	0.5	10.0	15.0
+Drosophila_melanogaster;species_excluded	1.0	0.5	0.875	0.5	0.0	0.0	5.0	0.0
+Drosophila_melanogaster;family_excluded	5.5	0.75	0.25	1.0	0.0	0.5	20.0	10.0
+Drosophila_melanogaster;order_excluded	5.5	1.0	0.25	0.5	0.0	0.5	15.0	15.0

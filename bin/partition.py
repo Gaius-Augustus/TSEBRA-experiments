@@ -43,6 +43,9 @@ def main():
     if not os.path.exists(workdir):
         os.mkdir(workdir)
 
+    # create weight files
+    getWeights(args.species_dir.split('/')[-1], args.test_level)
+
     gene_set = '{}/gene_set.gff'.format(workdir)
     braker2evm(braker1, braker2, gene_set)
 
@@ -59,6 +62,10 @@ def main():
         pool.apply_async(prep_partition, (part[3], anno, pseudo, braker1, braker2, tsebra_default))
     pool.close()
     pool.join()
+
+def getWeights(species, test_level):
+    cmd = "{}/exp2_weights.py --species {} --test_level {}".format(species, test_level)
+    call_process(cmd)
 
 def braker2evm(braker1, braker2, braker_path):
     # create concatinated set of genes from BRAKER1

@@ -2,7 +2,7 @@
 
 This repository contains all data and scripts used for the experiments of the paper TSEBRA: Transcript Selector for BRAKER.
 
-Both experiments require that [TSEBRA](https://github.com/Gaius-Augustus/TSEBRA) has been downloaded and that its ```bin``` folder is added to ```$PATH```, e.g.:
+Both experiments require that [TSEBRA](https://github.com/Gaius-Augustus/TSEBRA) has been downloaded and that its ```bin``` folder is added to ```$PATH```, for example with:
 ```console
 git clone https://github.com/LarsGab/TSEBRA
 export PATH="$(pwd)/TSEBRA/bin:$PATH"
@@ -17,6 +17,7 @@ Choose a species and replace "Enter species" with a species name from ```species
 ```console
 species="Enter_species"
 species_dir=$(pwd)"/$species"
+mkdir -p $species_dir
 ```
 
 You have to choose a level of exclusion for the protein database of the BRAKER2 run.
@@ -33,17 +34,9 @@ braker2_dir="${species_dir}/braker2/${level}"
 ```
 
 ### BRAKER1<sup name="a1">[1](#ref1)</sup> and BRAKER2<sup name="a2">[2](#ref2)</sup>
-You can use the BRAKER1 and BRAKER2 results prepared at ToDo: [Link to Webserver]:
-```console
-wget link/to/webserver/$species.tar.gz
-tar -xzvf $species.tar.gz
-```
-
-Alternatively, you can create your own BRAKER runs, if you want to do the experiment from scratch.
-
-Then you have to
+Before you run BRAKER you have to
 * install [BRAKER v2.1.5](https://github.com/Gaius-Augustus/BRAKER/releases/tag/v2.1.5),
-* prepare genome and annotation as described in [EukSpecies-BRAKER2](https://github.com/gatech-genemark/EukSpecies-BRAKER2),
+* prepare genome and annotation as described in [EukSpecies-BRAKER2](https://github.com/gatech-genemark/EukSpecies-BRAKER2) into ```$species_dir```,
 * prepare RNA-seq hints and protein data as described in [BRAKER2-exp](https://github.com/gatech-genemark/BRAKER2-exp) into ```$species_dir```.
 
 You have to run BRAKER1 only once per species!
@@ -94,7 +87,7 @@ For this experiment you need to
 * install [EVidenceModeler](https://github.com/EVidenceModeler/EVidenceModeler/tree/68e724ea25badcd74a1d4631c712605a4efa78ef) (commit 68e724e).
 
 If you haven't done it for the first Experiment:
-* prepare genome and annotation as described in [EukSpecies-BRAKER2](https://github.com/gatech-genemark/EukSpecies-BRAKER2)
+* prepare genome and annotation as described in [EukSpecies-BRAKER2](https://github.com/gatech-genemark/EukSpecies-BRAKER2) into ```$species_dir```,
 * install [TSEBRA](https://github.com/LarsGab/TSEBRA)
 
 Choose a species and replace "Enter species" with a species name from ```model_species.tab```, e.g. "Drosophila_melanogaster".
@@ -111,22 +104,9 @@ Choose a level of exclusion for the protein database of the BRAKER2 run and remo
 #level="order_excluded"
 ```
 
-Download the prepared files from ToDo[Enter link to webserver], if you didn't download them for the first experiment.
-```console
-wget link/to/webserver/$species.tar.gz
-tar -xzvf $species.tar.gz ${species}/EVM/ -C ${species_dir}
-```
-
 ### PASA<sup name="a4">[4](#ref4)</sup>
-You can use the PASA results we have prepared and copy them to your ```$species_dir```.
-They are already in your ```$species_dir``` and you do not need to run following commands, if you used the prepared files in the experiment 1.
 
-Otherwise:
-```console
-tar -xzvf $species.tar.gz $species/pasa/ -C $species_dir
-```
-
-Alternatively, you can create your own PASA run. Then, you have to make your own VARUS run from scratch as decribed in [BRAKER2-exp](https://github.com/gatech-genemark/BRAKER2-exp) into ```$species_dir/varus/``` and you have to install:
+To generate RNA-seq based hints with PASA, you have to make your own VARUS run from scratch as decribed in [BRAKER2-exp](https://github.com/gatech-genemark/BRAKER2-exp) into ```$species_dir/varus/``` and you have to install:
 * [samtools](https://github.com/samtools/samtools)
 * [Trinity v2.12.0](https://github.com/trinityrnaseq/trinityrnaseq/releases/tag/v2.12.0)
 * [PASA v2.4.1](https://github.com/PASApipeline/PASApipeline/releases/tag/pasa-v2.4.1)
