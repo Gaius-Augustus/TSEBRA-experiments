@@ -57,7 +57,7 @@ braker.pl --genome=${species_dir}/data/genome.fasta.masked --prot_seq=${species_
 
 Ensure that the transcript and gene IDs of the BRAKER prediction files are in order:
 ```console
-fix_gtf_ids.py --gtf ${braker1_dir}braker.gtf --out ${braker1_dir}/braker_fixed.gtf
+fix_gtf_ids.py --gtf ${braker1_dir}/braker.gtf --out ${braker1_dir}/braker_fixed.gtf
 fix_gtf_ids.py --gtf ${braker2_dir}/braker.gtf --out ${braker2_dir}/braker_fixed.gtf
 ```
 
